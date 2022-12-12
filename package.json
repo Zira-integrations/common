@@ -6,7 +6,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc -noEmit && rm -rf dist && node esbuild.js"
+    "build": "tsc -noEmit && rm -rf dist && node esbuild.js",
+    "publish": "npm publish --access public"
   },
   "keywords": [],
   "author": "",
