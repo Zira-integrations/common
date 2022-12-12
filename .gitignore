@@ -1,0 +1,8 @@
+# ignore mac internal files
+**/.DS_Store
+.history
+**/testReport
+**/node_modules
+**/dist
+**/lib
+lib/**
