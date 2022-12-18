@@ -7,7 +7,7 @@ import { simpleParser } from 'mailparser'
 const s3 = new aws.S3();
 
 
-export const parseEmail = (): MiddlewareObj => ({
+const parseEmail = (): MiddlewareObj => ({
     before: async (handler: any): Promise<void> => {
         try {
             const rawMail: any = await s3
@@ -26,3 +26,5 @@ export const parseEmail = (): MiddlewareObj => ({
         }
     }
 })
+
+export default parseEmail

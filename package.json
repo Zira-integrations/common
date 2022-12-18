@@ -1,12 +1,12 @@
 {
   "name": "@lightapp-public/common",
-  "version": "1.0.4",
-  "main": "dist/index.js",
+  "version": "1.0.22",
+  "main": "lib/index.js",
   "files": [
-    "dist"
+    "lib/**"
   ],
   "scripts": {
-    "build": "tsc -noEmit && rm -rf dist && node esbuild.js",
+    "build": "rm -rf lib && tsc",
     "publish-prod": "npm publish --access public"
   },
   "keywords": [],
@@ -16,13 +16,12 @@
     "@types/mailparser": "^3.4.0",
     "typescript": "^4.9.4",
     "node": "^16.18.0",
-    "npm": "^8.19.2",
-    "esbuild-node-externals": "^1.5.0",
-    "esbuild": "0.16.4"
+    "npm": "^8.19.2"
   },
   "dependencies": {
     "@middy/core": "^4.0.5",
     "aws-sdk": "^2.1272.0",
+    "fast-csv": "^4.3.6",
     "mailparser": "^3.6.0"
   },
   "description": ""
