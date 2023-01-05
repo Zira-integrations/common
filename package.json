@@ -1,13 +1,13 @@
 {
-  "name": "@lightapp-public/common",
-  "version": "1.0.25",
+  "name": "@zira_integration/common",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "files": [
     "lib/**"
   ],
   "scripts": {
     "build": "rm -rf lib && tsc",
-    "publish-prod": "npm publish --access public"
+    "publish-public": "npm publish --access public"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +25,16 @@
     "mailparser": "^3.6.0",
     "node-xlsx": "^0.21.0"
   },
-  "description": ""
+  "description": "",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zira-integrations/common.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Zira-integrations/common/issues"
+  },
+  "homepage": "https://github.com/Zira-integrations/common#readme"
 }
