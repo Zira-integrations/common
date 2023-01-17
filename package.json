@@ -1,13 +1,13 @@
 {
   "name": "@zira_integration/common",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/index.js",
   "files": [
     "lib/**"
   ],
   "scripts": {
     "build": "rm -rf lib && tsc",
-    "publish-public": "npm publish --access public"
+    "publish-public": "npm run build && npm publish --access public"
   },
   "keywords": [],
   "author": "",
