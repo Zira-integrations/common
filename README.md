@@ -3,7 +3,7 @@
 This npm package contains common functionality to enable reuse of common functionality adapters
 
 
-installation: `npm i @zira/common`
+installation: `npm i @zira_integration/common`
 
 ## `parseEmail`
 
@@ -32,10 +32,23 @@ This middleware will add email object to the adapter `event` argument
     -   attachment[].contentId is the ID from Content-ID header
     -   attachment[].content is an ArrayBuffer that contains the attachment file
 
+## `getS3Object`
+
+This middleware will add S3 object to the adapter `event` argument
+
 ## `readCsv`
 
-This function returns the data of csv file 
+This function returns the data of csv file
 
 ## `readXls`
 
-This function returns the data of xls file 
+This function returns the data of xls file
+
+
+## `getCollectionInfo`
+
+Retrieves Collection Info from custom data source with cache
+
+## `meterSearch`
+
+Retrieves Meter ID using a searchKey with cache
