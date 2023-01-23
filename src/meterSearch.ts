@@ -1,6 +1,6 @@
 import got from 'got';
 
-function meterSearch (searchKey: string, apiKey: string): Promise<string> {
+function mSearch (searchKey: string, apiKey: string): Promise<string> {
   return got
     .get(
       `https://api.zira.us/public/data-sources?limit=1&textSearch=${searchKey}`,
@@ -45,5 +45,5 @@ function memoizePromiseFn (fn: Function): Function {
   };
 }
 
-const cachedMeterSearch = memoizePromiseFn(meterSearch);
-export default cachedMeterSearch;
+const meterSearch = memoizePromiseFn(mSearch);
+export default meterSearch;

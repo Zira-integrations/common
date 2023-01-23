@@ -1,7 +1,8 @@
 {
-  "name": "@zira_integration/common",
+  "name": "zira_integ",
   "version": "1.0.3",
   "main": "lib/index.js",
+  "type": "module",
   "files": [
     "lib/**"
   ],
@@ -9,8 +10,11 @@
     "build": "rm -rf lib && tsc",
     "publish-public": "npm run build && npm publish --access public"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "zira",
+    "integration"
+  ],
+  "author": "Zira",
   "license": "ISC",
   "devDependencies": {
     "@types/mailparser": "^3.4.0",
@@ -23,11 +27,12 @@
     "@middy/core": "^4.0.5",
     "aws-sdk": "^2.1272.0",
     "fast-csv": "^4.3.6",
+    "got": "^12.5.3",
     "mailparser": "^3.6.0",
     "node-xlsx": "^0.21.0",
     "xlsx": "^0.18.5"
   },
-  "description": "",
+  "description": "Packages used for data integration with Zira data sources.",
   "directories": {
     "lib": "lib"
   },

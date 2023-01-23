@@ -1,6 +1,6 @@
 import got from 'got';
 
-function getCollectionInfo (meterId: string, apiKey: string): Promise<any> {
+function getCInfo (meterId: string, apiKey: string): Promise<any> {
   return got
     .get(`https://api.zira.us/public/data-sources/${meterId}`, {
       headers: {
@@ -39,5 +39,5 @@ function memoizePromiseFn (fn: Function): Function {
   };
 }
 
-const cachedGetCollectionInfo = memoizePromiseFn(getCollectionInfo);
-export default cachedGetCollectionInfo;
+const getCollectionInfo = memoizePromiseFn(getCInfo);
+export default getCollectionInfo;
