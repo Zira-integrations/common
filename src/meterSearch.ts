@@ -15,10 +15,10 @@ function mSearch (searchKey: string, apiKey: string): Promise<string> {
       if (data) {
         return data[0].id;
       }
-      return data;
+      return null;
     })
     .catch((err: any) => {
-      return err;
+      return { meterSearchError: err };
     });
 }
 

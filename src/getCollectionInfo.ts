@@ -9,10 +9,10 @@ function getCInfo (meterId: string, apiKey: string): Promise<any> {
     })
     .json()
     .then(({ data }: any) => {
-      return data.formConfig.collectionInfo;
+      return data.collectionInfo || null;
     })
     .catch((err: any) => {
-      return err;
+      return { collectionInfoError: err };
     });
 }
 
