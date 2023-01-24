@@ -7,8 +7,8 @@ const successLogger = (): MiddlewareObj => ({
     handler.event.addSuccess = () => {
       handler.event.successes++;
     }
-    handler.event.addFailure = (failData: any) => {
-      console.log('Failed with data:', failData)
+    handler.event.addFailure = (reason: string, failData: any) => {
+      console.warn(reason, 'DATA::', failData);
       handler.event.failures.push(failData);
     }
   },
