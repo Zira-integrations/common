@@ -12,7 +12,8 @@ function getCInfo (meterId: string, apiKey: string): Promise<any> {
       return data.collectionInfo || null;
     })
     .catch((err: any) => {
-      return { collectionInfoError: err };
+      console.log(err);
+      return null;
     });
 }
 

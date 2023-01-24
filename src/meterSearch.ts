@@ -18,7 +18,8 @@ function mSearch (searchKey: string, apiKey: string): Promise<string> {
       return null;
     })
     .catch((err: any) => {
-      return { meterSearchError: err };
+      console.log(err);
+      return null;
     });
 }
 
