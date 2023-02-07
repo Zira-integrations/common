@@ -9,7 +9,7 @@ function getMSchema (meterId: string, apiKey: string): Promise<any> {
     })
     .json()
     .then(({ data }: any) => {
-      return data.collectionInfo || null;
+      return data || null;
     })
     .catch((err: any) => {
       console.log(err);
