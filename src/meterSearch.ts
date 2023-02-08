@@ -1,6 +1,8 @@
 import got from 'got';
 
-function mSearch (searchKey: string, apiKey: string): Promise<string> {
+type MeterSearch = (searchKey: string, apiKey: string) => Promise<any>;
+
+const mSearch: MeterSearch = (searchKey, apiKey) => {
   return got
     .get(
       `https://api.zira.us/public/data-sources?limit=1&textSearch=${searchKey}`,
@@ -23,7 +25,7 @@ function mSearch (searchKey: string, apiKey: string): Promise<string> {
     });
 }
 
-function memoizePromiseFn (fn: Function): Function {
+function memoizePromiseFn (fn: Function): MeterSearch {
   const cache = new Map();
 
   return (...args: any) => {
