@@ -1,6 +1,8 @@
 import got from 'got';
 
-function getMSchema (meterId: string, apiKey: string): Promise<any> {
+type GetMeterSchema = (meterId: string, apiKey: string) => Promise<any>
+
+const getMSchema: GetMeterSchema = (meterId, apiKey) => {
   return got
     .get(`https://api.zira.us/public/data-sources/${meterId}`, {
       headers: {
@@ -17,7 +19,7 @@ function getMSchema (meterId: string, apiKey: string): Promise<any> {
     });
 }
 
-function memoizePromiseFn (fn: Function): Function {
+function memoizePromiseFn (fn: Function): GetMeterSchema {
   const cache = new Map();
 
   return (...args: any) => {
