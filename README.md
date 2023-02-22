@@ -7,7 +7,7 @@ installation: `npm i @zira_integration/common`
 
 ## `parseEmail`
 
-This middleware will add email object to the adapter `event` argument
+This middleware will add email object to the `event` parameter
 
 -   headers is an array of headers in the same order as found from the message (topmost headers first).
     -   headers[].key is lowercase key of the header line, eg. `"dkim-signature"`
@@ -34,7 +34,7 @@ This middleware will add email object to the adapter `event` argument
 
 ## `getS3Object`
 
-This middleware will add S3 object to the adapter `event` argument
+This middleware will add S3 object to the `event` parameter
 
 ## `readCsv`
 
@@ -44,11 +44,14 @@ This function returns the data of csv file
 
 This function returns the data of xls file
 
+## `getMeterSchema`
 
-## `getCollectionInfo`
-
-Retrieves Collection Info from custom data source with cache
+Retrieves Meter schema from data source with cache
 
 ## `meterSearch`
 
 Retrieves Meter ID using a searchKey with cache
+
+## `eventLogger`
+
+Adds `addFailure` and `addSuccess` methods to the `event` parameter. Once the adapter is done, it will log all successes and failures that were added.
