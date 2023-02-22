@@ -4,7 +4,7 @@ import { read, utils } from 'xlsx';
  *
  * @param attachmentContent parsedEmail.attachments[0].content from simpleParser
  * @param headerRow which row the headers are labeled (0-based index) If no headerRow, will read as arrays instead of json
- * @param sheetNum optional, states which sheet should be read (0-based index)
+ * @param sheetNum optional, states which sheet should be read (0-based index) default = 0
  */
 function readXls (
   attachmentContent: Buffer,
