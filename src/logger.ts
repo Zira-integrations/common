@@ -1,6 +1,6 @@
 import { MiddlewareObj } from '@middy/core';
 
-const successLogger = (): MiddlewareObj => {
+const logger = (): MiddlewareObj => {
   let successes = 0;
   let failures: any[] = [];
   return {
@@ -13,7 +13,7 @@ const successLogger = (): MiddlewareObj => {
         failures.push(failData);
       };
     },
-    after: function (handler: any): void {
+    after: function (): void {
       console.log({ successCount: successes });
       console.log({ failureCount: failures.length });
       console.log({ failures: failures });
@@ -21,4 +21,4 @@ const successLogger = (): MiddlewareObj => {
   };
 };
 
-export default successLogger;
+export default logger;

@@ -52,6 +52,6 @@ Retrieves Meter schema from data source with cache
 
 Retrieves Meter ID using a searchKey with cache
 
-## `eventLogger`
+## `logger`
 
 Adds `addFailure` and `addSuccess` methods to the `event` parameter. Once the adapter is done, it will log all successes and failures that were added.
