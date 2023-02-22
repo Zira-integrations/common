@@ -3,7 +3,7 @@
 This npm package contains common functionality to enable reuse of common functionality adapters
 
 
-installation: `npm i @zira_integration/common`
+installation: `npm i zira_integ`
 
 ## `parseEmail`
 
