@@ -1,7 +1,14 @@
 import csv from 'fast-csv';
 const { Readable } = require('stream');
 
-function readCsv (csvBuffer: any, rowProcessor = (row: string) => row) {
+
+/**
+ *
+ * @param csvBuffer parsedEmail.attachments[0].content from simpleParser
+ * @param rowProcessor callback function to manipulate each row
+ * @returns Promise<string[]>
+ */
+function readCsv (csvBuffer: Buffer, rowProcessor = (row: string) => row) {
   return new Promise((resolve, reject) => {
     const stream = Readable.from(csvBuffer);
 
