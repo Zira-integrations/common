@@ -5,8 +5,8 @@ const logger = (): MiddlewareObj => {
   let failures: any[] = [];
   return {
     before: function (handler: any): void {
-      handler.event.addSuccess = () => {
-        successes++;
+      handler.event.addSuccess = (count = 1) => {
+        successes += count;
       };
       handler.event.addFailure = (reason: string, failData: any) => {
         console.warn(reason, 'DATA::', failData);
