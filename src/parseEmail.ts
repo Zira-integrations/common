@@ -1,6 +1,7 @@
 import { MiddlewareObj } from '@middy/core';
 import aws from 'aws-sdk';
 import { simpleParser } from 'mailparser';
+import { inspect } from 'util';
 
 const s3 = new aws.S3();
 
@@ -16,7 +17,7 @@ const parseEmail = (): MiddlewareObj => ({
       console.log('Raw email:\n' + rawMail.Body);
 
       const parsedEmail = await simpleParser(rawMail.Body);
-      console.log('Parsed Email: ', parsedEmail);
+      console.log('Parsed Email:\n', inspect(parsedEmail, {depth: null}));
       handler.event.email = parsedEmail;
     } catch (err) {
       console.log('Error occurred: ', err);
