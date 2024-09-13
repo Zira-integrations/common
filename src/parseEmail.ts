@@ -14,6 +14,7 @@ const parseEmail = (): MiddlewareObj => ({
           Key: handler.event.detail.object.key
         })
         .promise();
+      console.log('S3 Key:', handler.event.detail.object.key)
       console.log('Raw email:\n' + rawMail.Body);
 
       const parsedEmail = await simpleParser(rawMail.Body);
