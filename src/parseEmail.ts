@@ -15,17 +15,17 @@ const parseEmail = (): MiddlewareObj => ({
         })
         .promise();
       console.log('S3 Key:', handler.event.detail.object.key)
-      if (handler.event.detail.requester == 'ses.amazonaws.com') {
+      // if (handler.event.detail.requester == 'ses.amazonaws.com') {
         console.log('Raw email:\n' + rawMail.Body);
 
         const parsedEmail = await simpleParser(rawMail.Body);
         console.log('Parsed Email:\n', inspect(parsedEmail, {depth: null}));
         handler.event.email = parsedEmail;
-      } else {
-        console.log('Requester is not SES');
-        console.log('Raw File:', rawMail)
-        handler.event.file = rawMail
-      }
+      // } else {
+      //   console.log('Requester is not SES');
+      //   console.log('Raw File:', rawMail)
+      //   handler.event.file = rawMail
+      // }
     } catch (err) {
       console.log('Error occurred: ', err);
     }
